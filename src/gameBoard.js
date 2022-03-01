@@ -15,14 +15,15 @@ class Gameboard {
         ['10a','10b','10c','10d','10e','10f','10g','10h','10i','10j']
     ]
         this.ships = [
-            carrier = new Ship(5,['','','','','']),
-            battleship = new Ship(4,['','','','']),
-            destroyer = new Ship(3,['','','']),
-            submarine = new Ship(3,['','','']),
-            patrolBoat = new Ship(2,['',''])
+            carrier = new Ship(5,['1a','1b','1c','1d','1e']),
+            battleship = new Ship(4,['1j','2j','3j','4j']),
+            destroyer = new Ship(3,['3a','3b','3c']),
+            submarine = new Ship(3,['5a','5b','5c']),
+            patrolBoat = new Ship(2,['9a','9b'])
         ];
 
         this.missed = [];
+        this.shipCount = 5;
     }
 
     receiveAttack(loc){
@@ -39,6 +40,18 @@ class Gameboard {
         });
     }
 
-    
+    isShipsSunk(){
+        let sunkShips = 0;
+        ships.forEach(element => {
+            if(element.isSunk()){
+                sunkShips++;
+            }
+        });
+        if(sunkShips === this.shipCount){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }
