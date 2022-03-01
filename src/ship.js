@@ -1,15 +1,16 @@
 class Ship {
-    constructor(length){
+    constructor(length,location){
+        this.location = [],
         this.length = length,
-        this.hitLocation = [];       
+        this.hits = 0;       
     }
 
-    hit(num){
-        this.hitLocation.push(num);
+    hit(){
+        this.hits++;
     }
 
     isSunk(){
-        if(this.length.toString() === this.hitLocation.toString()){
+        if(this.hits === this.length){
             return true;
         }else{
             return false;
