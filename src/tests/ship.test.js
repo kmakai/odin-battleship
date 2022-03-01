@@ -1,7 +1,6 @@
 const Ship = require('../ship');
 
 
-
 test('test ship object', () => {
     expect(new Ship(3,[])).toEqual(
         {   location: [],

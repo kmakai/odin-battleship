@@ -1,3 +1,5 @@
+
+
 class Ship {
     constructor(length,location){
         this.location = [],
@@ -17,5 +19,4 @@ class Ship {
         }
     }
 }
-
 module.exports = Ship;
